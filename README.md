@@ -1,24 +1,11 @@
-# README
+## 初回にDBを作成する
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### railsコンテナの ID or Name を取得する
+```
+docker container ls
+```
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### DB作成を実行
+```
+docker container exec <container ID or Name> rails db:create
+```
