@@ -44,13 +44,15 @@ ActiveRecord::Schema.define(version: 2021_05_06_153618) do
 
   create_table "purchases", force: :cascade do |t|
     t.integer "product_id", null: false
-    t.integer "unit_price", null: false
+    t.integer "user_id", null: false
     t.integer "shop_id", null: false
+    t.integer "unit_price", null: false
     t.integer "amount", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["product_id"], name: "index_purchases_on_product_id"
     t.index ["shop_id"], name: "index_purchases_on_shop_id"
+    t.index ["user_id"], name: "index_purchases_on_user_id"
   end
 
   create_table "shops", force: :cascade do |t|
@@ -73,4 +75,5 @@ ActiveRecord::Schema.define(version: 2021_05_06_153618) do
   add_foreign_key "product_stocks", "shops"
   add_foreign_key "purchases", "products"
   add_foreign_key "purchases", "shops"
+  add_foreign_key "purchases", "users"
 end
