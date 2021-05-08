@@ -9,3 +9,9 @@ docker container ls
 ```
 docker container exec <container ID or Name> rails db:create
 ```
+
+## マイグレーション実行
+
+```
+docker container exec <container ID or Name> rails db:migrate
+```
